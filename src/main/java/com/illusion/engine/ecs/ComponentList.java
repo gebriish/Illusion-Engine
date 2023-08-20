@@ -74,6 +74,6 @@ public class ComponentList {
 
     public void update() {
         for(int i=0; i<stackTop; i++)
-            componentArray[i].Update();
+            componentArray[i].update();
     }
 }

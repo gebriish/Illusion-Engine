@@ -24,7 +24,7 @@ public class Globals {
     {
         Width = 0;
         Height = 0;
-        CLEAR_COLOR  = new Color(.1f, .1f, .12f);
+        CLEAR_COLOR  = new Color(51, 50, 61);
         RESIZE_COLOR = new Color(1.0f);
 
         DisplayY = 0;

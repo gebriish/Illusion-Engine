@@ -35,6 +35,21 @@ public class Color {
         this.set(v, v, v, 1.0f);
     }
 
+    public void set(String hexCode) {
+        if(hexCode.contains("#"))
+        {
+            hexCode = hexCode.replace("#", "");
+        }
+
+        int rR = Integer.valueOf(hexCode.substring(0, 2), 16);
+        int rG = Integer.valueOf(hexCode.substring(2, 4), 16);
+        int rB = Integer.valueOf(hexCode.substring(4, 6), 16);
+
+        this.r = rR/256.0f;
+        this.g = rG/256.0f;
+        this.b = rB/256.0f;
+    }
+
     public void set(int rV, int gV, int bV) {
         set(rV/256.0f, gV/256.0f, bV/256.0f);
     }

@@ -35,6 +35,10 @@ public abstract class Scene {
         initialized = true;
     }
 
+    public void onReload() {
+
+    }
+
     public void update() {
         if(!initialized)
             init();
@@ -107,7 +111,6 @@ public abstract class Scene {
         m_Entities.get(i1).setID(i2);
         m_Entities.get(i2).setID(i1);
         Collections.swap(m_Entities, i1, i2);
-
     }
 
     public Camera2D getCamera() {

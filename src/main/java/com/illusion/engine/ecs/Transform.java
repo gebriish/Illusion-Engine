@@ -76,4 +76,8 @@ public class Transform {
         return point.x >= x1 && point.x <= x2 && point.y >= y1 && point.y <= y2;
     }
 
+    public void lerpScale(float xScale, float yScale, float t) {
+        this.scale.x = (this.scale.x * (1 - t)) + (xScale * t);
+        this.scale.y = (this.scale.y * (1 - t)) + (yScale * t);
+    }
 }

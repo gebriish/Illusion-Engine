@@ -128,4 +128,8 @@ public class Vec2 {
     public String toString() {
         return "[" + x + ", " + y + "]";
     }
+
+    public boolean equals(float x, float y) {
+        return this.x == x && this.y == y;
+    }
 }

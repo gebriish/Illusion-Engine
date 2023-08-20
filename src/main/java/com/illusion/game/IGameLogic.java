@@ -16,18 +16,18 @@ public class IGameLogic implements IAppLogic {
     private boolean isFirstFrame = true;
     private static Scene[] m_Scenes = new Scene[2];
     private static int activeScene = 0;
-    private ImGuiLayer imGuilayer;
+    //private ImGuiLayer imGuilayer;
 
     public static void loadScene(int i) {
         Renderer.get().MainCamera = m_Scenes[i].getCamera();
         activeScene = i;
         m_Scenes[activeScene].onResize(Globals.Width, Globals.Height);
+        m_Scenes[activeScene].onReload();
     }
 
 
     @Override
     public void onInit(WindowProps props) {
-        Globals.CLEAR_COLOR.set(51, 50, 61);
         props.setTitle("Mirage");
         props.setResolution(1280, 760);
         props.setWindowHint(Globals.HINTS_DECORATED, true);
@@ -48,7 +48,7 @@ public class IGameLogic implements IAppLogic {
     public void onRender() {
         render();
 
-        imGuilayer.render();
+        //imGuilayer.render();
     }
 
     @Override
@@ -59,7 +59,7 @@ public class IGameLogic implements IAppLogic {
 
     @Override
     public void onDispose() {
-        imGuilayer.dispose();
+        //imGuilayer.dispose();
         dispose();
     }
 
@@ -69,8 +69,8 @@ public class IGameLogic implements IAppLogic {
         activeScene = 0;
 
         m_Scenes[activeScene].init();
-        imGuilayer = new ImGuiLayer();
-        imGuilayer.init();
+        //imGuilayer = new ImGuiLayer();
+        //imGuilayer.init();
     }
 
 

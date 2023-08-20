@@ -7,7 +7,11 @@ public abstract class Component {
 
     }
 
-    public void Update() {
+    public void init() {
+
+    }
+
+    public void update() {
 
     }
 
@@ -15,7 +19,5 @@ public abstract class Component {
         return entity;
     }
 
-    public void init() {
 
-    }
 }

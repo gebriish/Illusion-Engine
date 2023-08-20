@@ -4,16 +4,15 @@ import com.illusion.engine.utils.Globals;
 import org.joml.Matrix4f;
 import org.joml.Vector4f;
 
-import static java.lang.Math.floor;
-
 public class Camera2D {
     private Vec2 position, up, right;
-    private float zPos, scale;
+    private float zPos, scale, rotation;
     private float width, height;
     private Matrix4f matrix, invMat;
 
     public Camera2D() {
         position = new Vec2(0.0f);
+        rotation = 0;
         scale = 1.0f;
         zPos = 4;
         matrix = new Matrix4f().identity();
@@ -43,6 +42,9 @@ public class Camera2D {
     private void calculateView() {
         float xPos = position.x;
         float yPos = position.y;
+
+        up.setTheta(rotation + 90);
+        right.setTheta(rotation);
         matrix.lookAt(xPos, yPos, zPos, xPos, yPos, zPos/Math.abs(zPos), up.x, up.y, .0f);
     }
 
@@ -82,5 +84,14 @@ public class Camera2D {
         Vector4f vec4 = new Vector4f(ScrPos.x, ScrPos.y, .0f, 1.0f);
         vec4.mul(invMat);
         return new Vec2(vec4.x, vec4.y);
+    }
+
+    public void setRotation(float theta) {
+        this.rotation = theta;
+    }
+
+    public void rotate(float dtheta)
+    {
+        this.rotation += dtheta;
     }
 }
