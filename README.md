@@ -22,3 +22,5 @@ if you want to try making a game, it is best to edit the default sample game (it
 - Build System
 - Level Editor* (maybe)
   - if level editor isn't integrated into the engine, probably a way to import Tiled or LDtk files 
+
+![alt text](release/res/images/screenshots/pic_0.png) ![alt text](release/res/images/screenshots/pic_1.png)
