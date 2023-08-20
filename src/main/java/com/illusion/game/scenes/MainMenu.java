@@ -11,7 +11,6 @@ import com.illusion.engine.utils.FileManager;
 import com.illusion.engine.utils.Globals;
 import com.illusion.game.IGameLogic;
 
-import static org.lwjgl.opengl.GL11C.glClearColor;
 
 public class MainMenu extends Scene {
 
